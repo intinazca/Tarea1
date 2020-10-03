@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Clase 1 </title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+</head>
+<body>
+    <a-scene>
+        <a-camera position="0 5 15"></a-camera>
+
+        <a-assets>
+            <img id= "skyTexture" src="texture/img.jpg">
+            <img id="texturaPlano" src="texture/banertwich.png">
+            <img id="normales" src="texture/lodo.jpg">
+            <img id="texturaEsfera" src="texture/tierra.jpg">
+            <img id="normalEsfera" src="texture/normalesPiedra.jpg">
+        </a-assets>
+        <a-light type="ambient" color="white" intensity="0.8" decay="1.5"></a-light>
+        <a-light type="point" color="blue" intensity="5" decay="2" position=" 8 1 0" distance="25" rotation="0 0 0"></a-light>
+        <a-light type="point" color="red" intensity="5" decay="2" position=" -8 1 0" distance="25" rotation="0 0 0"></a-light>
+        <a-sphere src=#texturaEsfera material="normalMap:#normales; normalEsfera:3 3" position="0 1 0" scale=" 3 3 3" ></a-sphere>
+                     
+        <a-sky src=#skyTexture></a-sky> 
+        <a-plane src="#texturaPlano" position ="0 -2 0" rotation="-90 0 0"  width="80" height="40" ></a-plane>
+    </a-scene>
+</body>
+</html>
